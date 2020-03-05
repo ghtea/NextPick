@@ -1,6 +1,6 @@
 /* https://github.com/developit/htm */
 
-import { html, Component, render } from 'https://ghtea.github.io/Countries/common/standalone.module.js';
+import { html, Component, render } from 'https://ghtea.github.io/NextPick/common/standalone.module.js';
 
 
   const HeroName = ({ heroId }) => html`<h1>${"Abathur"}</h1>`;
@@ -18,8 +18,6 @@ const HeroChart = ({ heroId })=> html`
       
     </g>
   </svg>
-  
-</svg>
 `;
 
 /* console.log(Math.round(objCountryPop['4']['2020']))
