@@ -3,50 +3,32 @@
 import { html, Component, render } from 'https://ghtea.github.io/Countries/common/standalone.module.js';
 
 
-  const CountryName = ({ countryCode }) => html`<h1>${objCountryBasic[countryCode]['Country']}</h1>`;
+  const HeroName = ({ heroId }) => html`<h1>${"Abathur"}</h1>`;
 
 
-/*
-  const CountryFlag = () => html`
+const HeroImg = ({ heroId })=> html`  <img class="imgHero" src=${"heroImgs/" + heroId  + ".png"} />`;
+
+
+const HeroChart = ({ heroId })=> html`
   <svg width="400" height="100">
 
     <g class="bar">
-      <rect width="${}" height="19"></rect>
-      <text x="45" y="30" dy=".35em"> ${objCountryBasic['4']['Country']}</text>
+      <rect width="${44}" height="19"></rect>
+      <text x="45" y="30" dy=".35em"> ${"great"}</text>
       
     </g>
   </svg>
-`;
-*/
-const CountryFlag = ({ countryCode })=> html`  <img class="imgFlag" src=${"flagsPng/" + objCountryBasic[countryCode]['Alpha2'].toLowerCase()  + ".png"} />`;
-
-
-const CounyryPopChart = ({ countryCode })=> html`
-  <svg width="400" height="200"   class="chart">
-  <polyline
-     fill="none"
-     stroke="#0074d9"
-     stroke-width="2"
-     points="
-       0,0
-       0,${objCountryPop[countryCode]['1950']/400}
-       30,${objCountryPop[countryCode]['1960']/400}
-       60,${objCountryPop[countryCode]['1970']/400}
-       90,${objCountryPop[countryCode]['1980']/400}
-       120,${objCountryPop[countryCode]['1990']/400}
-       150,${objCountryPop[countryCode]['2000']/400}
-       180,${objCountryPop[countryCode]['2010']/400}
-       210,${objCountryPop[countryCode]['2020']/400}
-       "/>
+  
 </svg>
 `;
 
-console.log(Math.round(objCountryPop['4']['2020']))
+/* console.log(Math.round(objCountryPop['4']['2020']))
+*/
 
-const Country = ({countryCode}) => html`
-  <${CountryName} countryCode=${countryCode}/> 
-  <${CountryFlag} countryCode=${countryCode}/>
-  <${CounyryPopChart} countryCode=${countryCode}/>
+const Hero = ({heroId}) => html`
+  <${HeroName} heroId=${heroId}/> 
+  <${HeroImg} heroId=${heroId}/>
+  <${HeroChart} heroId=${heroId}/>
   `;
 
-render(html`<${Country}  countryCode="4" />`, document.body);
+render(html`<${Hero}  heroId="Abathur" />`, document.body);
